@@ -1,0 +1,78 @@
+<div class="sidebar" data-color="yellow" data-image="/img/sidebar-4.jpg">
+
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <a class="simple-text" href="#">
+        PARENTSSSSS
+      </a>
+    </div>
+    <ul class="nav">
+      <li class="active">
+        <a href="dashboard.html">
+          <i class="pe-7s-graph"></i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+     <li>
+        <%= link_to current_user do %>
+          <i class="pe-7s-user"></i>
+          <p>User Profile</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to students_url do %>
+          <i class="pe-7s-study"></i>
+          <p>Students</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to teachers_url do %>
+          <i class="pe-7s-id"></i>
+          <p>Teachers</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to parents_url do %>
+          <i class="pe-7s-users"></i>
+          <p>Parents</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to courses_url do %>
+          <i class="pe-7s-ribbon"></i>
+          <p>Courses</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to classrooms_url do %>
+          <i class="pe-7s-culture"></i>
+          <p>Classrooms</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to grades_url do %>
+          <i class="pe-7s-note2"></i>
+          <p>Grade</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to exam_categories_url do %>
+          <i class="pe-7s-note2"></i>
+          <p>Exam Categories</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to exams_url do %>
+          <i class="pe-7s-note2"></i>
+          <p>Exams</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to attendances_url do %>
+          <i class="pe-7s-note2"></i>
+          <p>Attendance</p>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

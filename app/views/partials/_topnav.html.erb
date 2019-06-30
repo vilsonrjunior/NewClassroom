@@ -1,0 +1,184 @@
+<nav class="navbar navbar-default navbar-fixed">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#navigation-example-2" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <% if user_signed_in? %>
+        Hello, <%=current_user.name %>
+        <% elsif %>
+          <% teacher_signed_in? %>
+        Hello, <%=current_teacher.name %>
+        <% elsif %>
+          <% parent_signed_in? %>
+        Hello, <%=current_parent.name %>
+        <% elsif %>
+          <% student_signed_in? %>
+        Hello, <%=current_student.name %>
+        <% end %>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse">
+     <% if student_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user-circle-o"></i>
+            My Account
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">
+                <i class="fa fa-edit"></i>
+                Edit Profile
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-gears"></i>
+                Setting
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <%= link_to destroy_student_session_url, method: :delete do %>
+            <i class="fa fa-power-off"></i>
+            Log out
+          <% end %>
+      </li>
+      </ul>
+      <% elsif %>
+      <% user_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user-circle-o"></i>
+            My Account
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">
+                <i class="fa fa-edit"></i>
+                Edit Profile
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-gears"></i>
+                Setting
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_url, method: :delete do %>
+            <i class="fa fa-power-off"></i>
+            Log out
+          <% end %>
+      </li>
+      </ul>
+       <% elsif %>
+      <% parent_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user-circle-o"></i>
+            My Account
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">
+                <i class="fa fa-edit"></i>
+                Edit Profile
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-gears"></i>
+                Setting
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <%= link_to destroy_parent_session_url, method: :delete do %>
+            <i class="fa fa-power-off"></i>
+            Log out
+          <% end %>
+      </li>
+      </ul>
+       <% elsif %>
+      <% teacher_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user-circle-o"></i>
+            My Account
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">
+                <i class="fa fa-edit"></i>
+                Edit Profile
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-gears"></i>
+                Setting
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <%= link_to destroy_student_session_url, method: :delete do %>
+            <i class="fa fa-power-off"></i>
+            Log out
+          <% end %>
+      </li>
+      </ul>
+      <% else %>
+      <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+           <li>
+                <i class="fas fa-sign-in-alt"></i>
+                  Sign In
+                   <b class="caret"></b>
+                    <ul class="dropdown-menu">
+              <li>
+                 <%= link_to new_teacher_session_path do %>
+                  <i class="pe-7s-id"></i>
+                  Teacher
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_student_session_path do %>
+                  <i class="pe-7s-study"></i>
+                  Student
+                <% end %>
+              </li>
+               <li>
+                <%= link_to new_parent_session_path do %>
+                   <i class="pe-7s-users"></i>
+                  Parent
+                <% end %>
+              </li>
+            </ul>
+          </li>
+           </a>
+          </li>
+        </ul>
+    </div>
+    <% end %>
+  </nav>
+
