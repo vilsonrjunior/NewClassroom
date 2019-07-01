@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  # skip_before_action :authenticate_student!
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /students

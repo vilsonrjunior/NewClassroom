@@ -1,36 +1,30 @@
 
-
+<% if teacher_signed_in? %>
 <div class="sidebar" data-color="yellow" data-image="/img/sidebar-4.jpg">
 
   <div class="sidebar-wrapper">
     <div class="logo">
       <a class="simple-text" href="#">
-       TEACHERSSSSSS
+       TEACHERS
       </a>
     </div>
     <ul class="nav">
       <li class="active">
         <a href="dashboard.html">
-          <i class="pe-7s-graph"></i>
-          <p>Dashboard</p>
+          <i class="pe-7s-browser"></i>
+          <p>Your Calendar</p>
         </a>
       </li>
       <li>
-        <%= link_to current_user do %>
-          <i class="pe-7s-user"></i>
-          <p>User Profile</p>
+        <%= link_to current_teacher do %>
+          <i class="pe-7s-id"></i>
+          <p>Teacher Profile</p>
         <% end %>
       </li>
       <li>
         <%= link_to students_url do %>
           <i class="pe-7s-study"></i>
-          <p>Students</p>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to teachers_url do %>
-          <i class="pe-7s-id"></i>
-          <p>Teachers</p>
+          <p>Your Students</p>
         <% end %>
       </li>
       <li>
@@ -52,24 +46,6 @@
         <% end %>
       </li>
       <li>
-        <%= link_to grades_url do %>
-          <i class="pe-7s-note2"></i>
-          <p>Grade</p>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to exam_categories_url do %>
-          <i class="pe-7s-note2"></i>
-          <p>Exam Categories</p>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to exams_url do %>
-          <i class="pe-7s-note2"></i>
-          <p>Exams</p>
-        <% end %>
-      </li>
-      <li>
         <%= link_to attendances_url do %>
           <i class="pe-7s-note2"></i>
           <p>Attendance</p>
@@ -78,3 +54,4 @@
     </ul>
   </div>
 </div>
+<% end %>
