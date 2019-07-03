@@ -14,13 +14,16 @@
       .form-group.string.optional.student_parent_id
         %label.control-label.string.optional{for: 'student_parent_id'} Parent
         = f.select :parent_id, Parent.all.map { |p| [p.name + " ("+p.phone+")", p.id]}, {},{class: 'form-control string optional', id: 'student_parent_id'}
-      
+
       = f.input :email
       = f.input :password
-      = f.input :dob
+      = f.input :dob, as: :date, start_year: Date.today.year - 15,
+                                 end_year: Date.today.year - 4,
+                                 order: [:day, :month, :year]
       = f.input :phone
       = f.input :gender, collection: Student::GENDER
       = f.input :address
+      = f.input :course_id
 
     .col-xs-12.col-md-6
       = f.input :lat, as: :hidden, input_html: {id: 'student-lat'}
@@ -29,3 +32,5 @@
       #map-student
 
   = f.button :submit, class: 'btn btn-primary btn-fill'
+
+

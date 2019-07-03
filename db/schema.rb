@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190630181455) do
+ActiveRecord::Schema.define(version: 20190701114532) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer "student_id"
@@ -43,7 +43,11 @@ ActiveRecord::Schema.define(version: 20190630181455) do
     t.integer "grade_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
+    t.integer "teacher_id"
     t.index ["grade_id"], name: "index_courses_on_grade_id"
+    t.index ["student_id"], name: "index_courses_on_student_id"
+    t.index ["teacher_id"], name: "index_courses_on_teacher_id"
   end
 
   create_table "exam_categories", force: :cascade do |t|
@@ -118,6 +122,8 @@ ActiveRecord::Schema.define(version: 20190630181455) do
     t.datetime "updated_at", null: false
     t.string "gender"
     t.string "image"
+    t.integer "course_id"
+    t.index ["course_id"], name: "index_students_on_course_id"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["parent_id"], name: "index_students_on_parent_id"
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true

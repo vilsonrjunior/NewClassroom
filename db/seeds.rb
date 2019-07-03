@@ -163,6 +163,30 @@ end
 
 p '________________________'
 
+
+    p 'creating courses'
+
+
+  x = 0
+5.times do
+  course = Course.new(
+        name: Faker::Book.title,
+        # picture: "https://randomuser.me/api/portraits/#{['wo',''].sample}men/#{(0..99).to_a.sample}.jpg",
+        # username: Faker::Internet.username,
+        description: Faker::Movies::BackToTheFuture.quote,
+        grade: Grade.all.sample,
+        teacher: Teacher.all.sample,
+        # student: Student.all.sample
+        # email: "#{USERS[x]}@test.com",
+        # password: "123456"
+      )
+  # teacher.remote_photo_url = teacher.picture
+  course.save!
+  x += 1
+end
+
+p '_________________________'
+
 p 'creating 20 students'
 
 x = 0
@@ -178,7 +202,8 @@ x = 0
         long: -49.36972,
         gender: Faker::Gender.binary_type,
         parent: Parent.all.sample,
-        image: "https://randomuser.me/api/portraits/#{['wo',''].sample}men/#{(0..99).to_a.sample}.jpg"
+        image: "https://randomuser.me/api/portraits/#{['wo',''].sample}men/#{(0..99).to_a.sample}.jpg",
+        course: Course.all.sample
         # username: Faker::Internet.username,
         # level: LEVEL.sample,
         # course: Course.all.sample,
@@ -246,28 +271,5 @@ admin = User.new(
 #     t.datetime "updated_at", null: false
 #     t.index ["grade_id"], name: "index_courses_on_grade_id"
 #   end
-
-    p 'creating courses'
-
-
-  x = 0
-5.times do
-  course = Course.new(
-        name: Faker::Book.title,
-        # picture: "https://randomuser.me/api/portraits/#{['wo',''].sample}men/#{(0..99).to_a.sample}.jpg",
-        # username: Faker::Internet.username,
-        description: Faker::Movies::BackToTheFuture.quote,
-        grade: Grade.all.sample
-        # teacher: Teacher.all.sample,
-        # students: Student.all.sample(4)
-        # email: "#{USERS[x]}@test.com",
-        # password: "123456"
-      )
-  # teacher.remote_photo_url = teacher.picture
-  course.save!
-  x += 1
-end
-
-p '_________________________'
 
 p 'DONE!'

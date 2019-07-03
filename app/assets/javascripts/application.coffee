@@ -9,6 +9,7 @@
 
 #= require admin/js/bootstrap.min
 #= require admin/js/bootstrap-checkbox-radio-switch
+#= bootstrap-select
 #= require admin/js/chartist.min
 #= require admin/js/bootstrap-notify
 #= require admin/js/light-bootstrap-dashboard

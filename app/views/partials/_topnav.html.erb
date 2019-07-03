@@ -32,12 +32,11 @@
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="#">
-                <i class="fa fa-edit"></i>
-                Edit Profile
-              </a>
-            </li>
+           <li>
+            <%= link_to current_student do %>
+              <p>Profile</p>
+            <% end %>
+          </li>
             <li>
               <a href="#">
                 <i class="fa fa-gears"></i>
@@ -64,12 +63,10 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="#">
-                <i class="fa fa-edit"></i>
-                Edit Profile
-              </a>
-            </li>
-            <li>
+            <%= link_to current_user do %>
+              <p>Profile</p>
+            <% end %>
+          </li>
               <a href="#">
                 <i class="fa fa-gears"></i>
                 Setting
@@ -95,12 +92,10 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="#">
-                <i class="fa fa-edit"></i>
-                Edit Profile
-              </a>
-            </li>
-            <li>
+            <%= link_to current_parent do %>
+              <p>Profile</p>
+            <% end %>
+          </li>
               <a href="#">
                 <i class="fa fa-gears"></i>
                 Setting
@@ -124,13 +119,12 @@
             My Account
             <b class="caret"></b>
           </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="#">
-                <i class="fa fa-edit"></i>
-                Edit Profile
-              </a>
-            </li>
+              <ul class="dropdown-menu">
+           <li>
+            <%= link_to current_teacher do %>
+              <p>Profile</p>
+            <% end %>
+          </li>
             <li>
               <a href="#">
                 <i class="fa fa-gears"></i>

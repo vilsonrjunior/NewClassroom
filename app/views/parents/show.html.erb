@@ -1,0 +1,79 @@
+<% if notice.present? %>
+  <div class="alert alert-info" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<div class="col-xs-12 col md-12">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Parent</h4>
+      <hr/>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <table class="table">
+            <tr>
+              <th>Image</th>
+              <td>
+                <%= image_tag @parent.image, size: '150x150' %>
+              </td>
+            </tr>
+            <tr>
+              <th>Name</th>
+              <td>
+                <%= @parent.name %>
+              </td>
+            </tr>
+            <tr>
+              <th>Gender</th>
+              <td>
+                <%= @parent.gender %>
+              </td>
+            </tr>
+            <tr>
+              <th>Date of Birth</th>
+              <td>
+                <%= @parent.dob %>
+              </td>
+            </tr>
+            <tr>
+              <th>Phone</th>
+              <td>
+                <%= @parent.phone %>
+              </td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td>
+                <%= @parent.email %>
+              </td>
+            </tr>
+            <tr>
+              <th>Address</th>
+              <td>
+                <%= @parent.address %>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <input id="lat-value" type="hidden" value="<%= @parent.lat %>"></input>
+          <input id="long-value" type="hidden" value="<%= @parent.long %>"></input>
+          <div id="show-parent-map"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <%= link_to parents_path, class: 'btn btn-default' do %>
+        <i class="fa fa-chevron-left"></i>
+        Back
+      <% end %>
+      <%= link_to edit_parent_path(@parent), class: 'btn btn-primary btn-fill' do %>
+        <i class="fa fa-edit"></i>
+        Edit
+      <% end %>
+    </div>
+    <br/>
+  </div>
+</div>

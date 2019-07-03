@@ -6,6 +6,9 @@ class Teacher < ApplicationRecord
 
 devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
+has_many :courses
+has_many :students, through: :courses
+
   mount_uploader :image, TeacherUploader
 
   GENDER = ['Male', 'Female']

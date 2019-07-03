@@ -9,15 +9,27 @@
     </div>
     <ul class="nav">
       <li class="active">
-        <a href="dashboard.html">
+        <a href="#">
           <i class="pe-7s-browser"></i>
-          <p>SEU CALENDARIO</p>
+          <p>CALENDARIO</p>
         </a>
       </li>
       <li>
         <%= link_to current_parent do %>
           <i class="pe-7s-id"></i>
           <p>PERFIL</p>
+        <% end %>
+        <li>
+        <%= link_to students_url do %>
+          <i class="pe-7s-study"></i>
+          <p>Your Students</p>
+        <% end %>
+      </li>
+      </li>
+       <li>
+        <%= link_to teachers_url do %>
+          <i class="pe-7s-id"></i>
+          <p>Professor</p>
         <% end %>
       </li>
       <li>

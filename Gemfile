@@ -20,6 +20,9 @@ gem 'carrierwave',    '~> 1.2'
 gem 'devise',         '~> 4.3'
 gem 'font-awesome-sass'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'bootstrap-select-rails'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
 gem 'cloudinary', '~> 1.9.1'
 
 group :development, :test do

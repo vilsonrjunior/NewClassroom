@@ -1,7 +1,10 @@
 class Student < ApplicationRecord
 
   belongs_to :parent
-  has_many :attendances
+  belongs_to :course
+  has_one :teacher, through: :course
+  # has_many :courses
+  # has_many :teachers, through: :courses
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -10,5 +13,5 @@ class Student < ApplicationRecord
 
   mount_uploader :image, StudentUploader
 
-  GENDER = ['Male', 'Female']
+GENDER = ['Male', 'Female']
 end
