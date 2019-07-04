@@ -2,6 +2,7 @@ class Student < ApplicationRecord
 
   belongs_to :parent
   belongs_to :course
+  has_many :lessons
   has_one :teacher, through: :course
   # has_many :courses
   # has_many :teachers, through: :courses

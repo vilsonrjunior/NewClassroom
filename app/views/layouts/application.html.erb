@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
     <meta charset="utf-8"/>
@@ -15,9 +15,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body id="<%= controller_name %>_<%= params[:action] %>">
-    <%= render 'partials/topnav' %>
     <div class="wrapper">
-    <% unless current_page?(root_path) %>
     <% if user_signed_in? %>
       <%= render 'partials/sidebar' %>
       <% elsif %>
@@ -32,12 +30,12 @@
       <% else %>
       <% end %>
       <div class="main-panel">
+        <%= render 'partials/topnav' %>
         <div class="content">
           <div class="container-fluid">
             <div class="row">
               <%= yield %>
             </div>
-            <% end %>
           </div>
         </div>
       </div>

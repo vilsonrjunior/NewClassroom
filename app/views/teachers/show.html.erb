@@ -58,8 +58,9 @@
           </table>
         </div>
         <div class="col-md-6 col-xs-12">
-          <input id="lat-value" type="hidden" value="<%= @teacher.lat %>"></input>
-          <input id="long-value" type="hidden" value="<%= @teacher.long %>"></input>
+          <%= week_calendar number_of_weeks: 2 do |date| %>
+  <%= date %>
+<% end %>
           <div id="show-teacher-map"></div>
         </div>
       </div>

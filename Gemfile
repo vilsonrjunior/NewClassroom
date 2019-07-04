@@ -24,12 +24,14 @@ gem 'bootstrap-select-rails'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'cloudinary', '~> 1.9.1'
+gem "simple_calendar", "~> 2.0"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
    gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+   gem 'rails-erd'
 end
 
 group :development do
