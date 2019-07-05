@@ -44,7 +44,14 @@
                 <%= student.name  %>
                 <% end %>
               </td>
-            </tr>
+              <tr>
+                <th>Lessons</th>
+                <td>
+                <% @course.lessons.each do |lesson| %>
+                <%= lesson.name %>
+                <% end %>
+              </td>
+              </tr>
           </table>
         </div>
       </div>

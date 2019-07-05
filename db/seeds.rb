@@ -263,13 +263,26 @@ admin = User.new(
 
   p '____________________'
 
-# create_table "courses", force: :cascade do |t|
-#     t.string "name"
-#     t.text "description"
-#     t.integer "grade_id"
-#     t.datetime "created_at", null: false
-#     t.datetime "updated_at", null: false
-#     t.index ["grade_id"], name: "index_courses_on_grade_id"
-#   end
+
+  p ' creating lessons'
+
+  x = 0
+20.times do
+  lesson = Lesson.new(
+        name: Faker::Book.title,
+        material: Faker::Book.title,
+        course: Course.all.sample
+        # username: Faker::Internet.username,
+        # level: LEVEL.sample,
+        # course: Course.all.sample,
+
+      )
+  # teacher.remote_photo_url = teacher.picture
+  lesson.save!
+  x += 1
+end
+
+p '___________________________________'
+
 
 p 'DONE!'

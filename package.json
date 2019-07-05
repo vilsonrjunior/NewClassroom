@@ -1,5 +1,7 @@
 {
   "name": "school-management",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "flatpickr": "^4.6.1"
+  }
 }

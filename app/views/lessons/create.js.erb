@@ -1,0 +1,16 @@
+function refreshForm2(innerHTML) {
+  const newLessonForm = document.querySelector('#new_lesson');
+  newLessonForm.innerHTML = innerHTML;
+}
+
+function addLesson(LessonHTML) {
+  const lessons = document.querySelector('#lessons');
+  lessons.innerHTML = lessons.innerHTML + lessonHTML;
+}
+
+<% if @lesson.errors.any? %>
+  refreshForm2('<%= j render "lessons/form", user: @user, lesson: @lesson %>');
+<% else %>
+  addLesson('<%= j render "lessons/show", lesson: @lesson %>');
+  refreshForm2('<%= j render "lessons/form", user: @user, lesson: Lesson.new %>');
+<% end %>

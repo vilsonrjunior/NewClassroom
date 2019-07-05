@@ -1,0 +1,9 @@
+<%= simple_form_for(@lesson) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :material %>
+  <%= f.input :course_id %>
+  <%= f.submit "Create lesson", class: "btn btn-talk" %>
+<% end %>
+
+
+<!-- check view/lessons/new for form for dates time -->

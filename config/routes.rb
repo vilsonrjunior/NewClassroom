@@ -10,16 +10,19 @@ Rails.application.routes.draw do
   resources :users
   resources :parents
   resources :teachers
-  resources :exam_categories
+  # resources :exam_categories
   resources :grades
+  resources :lessons
 
   resources :students
-  resources :exams
+  # resources :exams
   resources :courses
   resources :attendances
-  resources :classrooms
+  resources :lessons
 
   # root 'dashboard#index'
   root 'pages#home'
 
 end
+
+

@@ -14,7 +14,7 @@ gem 'coffee-rails',   '~> 4.2'
 gem 'turbolinks',     '~> 5'
 gem 'jbuilder',       '~> 2.5'
 gem 'simple_form',    '~> 3.5'
-gem 'haml-rails',     '~> 1.0'
+# gem 'haml-rails',     '~> 1.0'
 gem 'jquery-rails',   '~> 4.3'
 gem 'carrierwave',    '~> 1.2'
 gem 'devise',         '~> 4.3'
@@ -25,6 +25,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'cloudinary', '~> 1.9.1'
 gem "simple_calendar", "~> 2.0"
+gem 'strftime', '~> 1.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

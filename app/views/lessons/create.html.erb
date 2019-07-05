@@ -1,0 +1,7 @@
+<%= simple_form_for([ user, lesson ], remote: true) do |f| %>
+  <%= f.input :start, input_html: {placeholder: "#{DateTime.now}"} %>
+  <%= f.input :price, input_html: {placeholder: "$"} %>
+  <%= f.input :name %>
+  <%= f.input :material %>
+  <%= f.submit "Add this lesson to your profile", class: "btn btn-talk" %>
+<% end %>
