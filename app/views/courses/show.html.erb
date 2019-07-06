@@ -26,6 +26,16 @@
               </td>
             </tr>
             <tr>
+              <th>Start Date</th>
+              <td>
+                <%= @course.start_date %>
+              </td>
+              <tr>
+              <th>End Date</th>
+              <td>
+                <%= @course.end_date %>
+              </td>
+            <tr>
               <th>Grade</th>
               <td>
                 <%= @course.grade.name %>
@@ -41,14 +51,17 @@
               <th>Students enrolled</th>
               <td>
                 <% @course.students.each do |student| %>
-                <%= student.name  %>
+              <ul>
+                <%= student.name %>
+              </ul>
                 <% end %>
-              </td>
               <tr>
                 <th>Lessons</th>
                 <td>
                 <% @course.lessons.each do |lesson| %>
-                <%= lesson.name %>
+                <ul>
+                  <%= lesson.name %>
+                </ul>
                 <% end %>
               </td>
               </tr>
