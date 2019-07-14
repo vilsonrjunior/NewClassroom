@@ -61,6 +61,7 @@
                 <% @course.lessons.each do |lesson| %>
                 <ul>
                   <%= lesson.name %>
+                  <%= link_to 'View lesson', lesson %>
                 </ul>
                 <% end %>
               </td>

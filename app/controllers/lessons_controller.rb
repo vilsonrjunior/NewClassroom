@@ -5,9 +5,29 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all
+    if current_user
+      @lessons = Lesson.all
+    elsif current_teacher
+      @lessons = current_teacher.lessons
+    elsif current_student
+      # raise
+      @lessons = current_student.course.lessons
+    else current_parent
+      @lessons = current_parent.students.course.lessons
   end
 
+ # def index
+ #    @bookings = current_user.therapist ? current_user.therapist_bookings : current_user.client_bookings
+ #  end
+
+ #  def show
+ #  if current_user.therapist
+ #    @booking = current_user.therapist_bookings.find(params[:id])
+ #  else
+ #    @booking = current_user.client_bookings.find(params[:id])
+ #  end
+    # raise
+  end
   # GET /lessons/1
   # GET /lessons/1.json
   def show

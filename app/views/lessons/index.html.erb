@@ -83,22 +83,24 @@
           </tr>
         </thead>
         <tbody>
-          <% @lessons.each do |lesson| %>
+          <% if current_teacher.courses != nil %>
+          <% current_teacher.courses %>
             <tr>
               <td>
-                <%= current_teacher.courses.lesson.name %>
+                <%= @lesson.name %>
               </td>
               <td>
-                <%= lesson.material %>
+                <%= @lesson.material %>
               </td>
               <td>
-                <%= link_to course.lesson, class: 'btn btn-info btn-sm' do %>
+                <%= link_to lesson, class: 'btn btn-info btn-sm' do %>
                   <i class="fa fa-eye"></i>
                   Show
                 <% end %>
               </td>
             </tr>
-          <% end %>
+            <% end %>
+
         </tbody>
       </table>
     </div>
@@ -119,29 +121,30 @@
       <table class="table table-hover table-striped">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Material</th>
+            <th>Nome</th>
+            <th>Materiais</th>
+            <th>Dia</th>
+            <th>dia</th>
           </tr>
         </thead>
+          <% if current_student.course != nil %>
+            <% @lessons.each do |lesson| %>
         <tbody>
-          <% if current_student.lesson != nil %>
             <tr>
               <td>
-                <%= current_student.lesson.name %>
+                <%= lesson.name %>
               </td>
               <td>
-                <%= current_student.lesson.description %>
+                <%= lesson.material %>
               </td>
               <td>
-                <%= current_student.lesson.grade.name %>
+                <%= lesson.start_date %>
               </td>
-              <td>
-                <%= link_to current_student.lesson, class: 'btn btn-info btn-sm' do %>
-                  <i class="fa fa-eye"></i>
-                  Show
-                <% end %>
+               <td>
+                <%= lesson.end_date %>
               </td>
             </tr>
+            <% end %>
             <% end %>
         </tbody>
       </table>
