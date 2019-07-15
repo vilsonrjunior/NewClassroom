@@ -78,29 +78,37 @@
       <table class="table table-hover table-striped">
         <thead>
           <tr>
+            <th>Course</th>
+            <th>Date</th>
             <th>Name</th>
             <th>Material</th>
           </tr>
         </thead>
         <tbody>
-          <% if current_teacher.courses != nil %>
-          <% current_teacher.courses %>
+          <% @lessons.each do |lesson| %>
+          <% lesson.each do |child| %>
             <tr>
               <td>
-                <%= @lesson.name %>
+                <%= child.course.name %>
               </td>
               <td>
-                <%= @lesson.material %>
+                <%= child.start_date %>
               </td>
               <td>
-                <%= link_to lesson, class: 'btn btn-info btn-sm' do %>
+                <%= child.name %>
+              </td>
+              <td>
+                <%= child.material %>
+              </td>
+              <td>
+                <%= link_to child, class: 'btn btn-info btn-sm' do %>
                   <i class="fa fa-eye"></i>
                   Show
                 <% end %>
               </td>
             </tr>
             <% end %>
-
+          <% end %>
         </tbody>
       </table>
     </div>
@@ -125,6 +133,7 @@
             <th>Materiais</th>
             <th>Dia</th>
             <th>dia</th>
+            <th>Ir para Aula</th>
           </tr>
         </thead>
           <% if current_student.course != nil %>
@@ -142,6 +151,9 @@
               </td>
                <td>
                 <%= lesson.end_date %>
+              </td>
+              <td>
+                <%= link_to 'AULA', lesson %>
               </td>
             </tr>
             <% end %>

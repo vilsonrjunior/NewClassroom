@@ -12,4 +12,5 @@ has_many :students, through: :courses
   mount_uploader :image, TeacherUploader
 
   GENDER = ['Male', 'Female']
+
 end

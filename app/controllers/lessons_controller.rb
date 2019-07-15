@@ -8,25 +8,34 @@ class LessonsController < ApplicationController
     if current_user
       @lessons = Lesson.all
     elsif current_teacher
-      @lessons = current_teacher.lessons
+      lessons_array = []
+      # check if current_teacher has any courses
+      if current_teacher.courses != nil
+       # filter current_teacher courses
+      @teacher_courses = current_teacher.courses.map { |course| lessons_array << course.lessons }
+      # from current_teacher courses, get individual course
+      @lessons = lessons_array
+      # raise
+      # from each current_teacher course, get lessons
+
+      # from each lesson, display info
+
+      end
+
+      # @lessons_filtered = @courses_filtered.lessons.each do |lesson|
+      #   lesson.name
+      # end
+      # @courses_filtered = current_teacher.courses.each { |course|}
+      # # raise
+      # @lessons_filtered = @courses_filtered.find { |lesson| lesson.name }
+      #raise
+
     elsif current_student
       # raise
       @lessons = current_student.course.lessons
     else current_parent
       @lessons = current_parent.students.course.lessons
   end
-
- # def index
- #    @bookings = current_user.therapist ? current_user.therapist_bookings : current_user.client_bookings
- #  end
-
- #  def show
- #  if current_user.therapist
- #    @booking = current_user.therapist_bookings.find(params[:id])
- #  else
- #    @booking = current_user.client_bookings.find(params[:id])
- #  end
-    # raise
   end
   # GET /lessons/1
   # GET /lessons/1.json
