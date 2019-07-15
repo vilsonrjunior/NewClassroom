@@ -2,43 +2,21 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
-  # GET /lessons
-  # GET /lessons.json
   def index
     if current_user
-      @lessons = Lesson.all
+     @lessons = Lesson.all
     elsif current_teacher
-      lessons_array = []
-      # check if current_teacher has any courses
-      if current_teacher.courses != nil
-       # filter current_teacher courses
-      @teacher_courses = current_teacher.courses.map { |course| lessons_array << course.lessons }
-      # from current_teacher courses, get individual course
-      @lessons = lessons_array
-      # raise
-      # from each current_teacher course, get lessons
-
-      # from each lesson, display info
-
-      end
-
-      # @lessons_filtered = @courses_filtered.lessons.each do |lesson|
-      #   lesson.name
-      # end
-      # @courses_filtered = current_teacher.courses.each { |course|}
-      # # raise
-      # @lessons_filtered = @courses_filtered.find { |lesson| lesson.name }
-      #raise
-
+     if current_teacher.courses != nil
+     lessons_array = []
+     @teacher_courses = current_teacher.courses.map { |course| lessons_array << course.lessons }
+     @lessons = lessons_array
     elsif current_student
-      # raise
+      raise
       @lessons = current_student.course.lessons
-    else current_parent
-      @lessons = current_parent.students.course.lessons
+     end
+    end
   end
-  end
-  # GET /lessons/1
-  # GET /lessons/1.json
+
   def show
   end
 

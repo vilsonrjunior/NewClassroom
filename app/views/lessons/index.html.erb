@@ -136,8 +136,7 @@
             <th>Ir para Aula</th>
           </tr>
         </thead>
-          <% if current_student.course != nil %>
-            <% @lessons.each do |lesson| %>
+            <% current_student.course.lessons.each do |lesson| %>
         <tbody>
             <tr>
               <td>
@@ -156,7 +155,6 @@
                 <%= link_to 'AULA', lesson %>
               </td>
             </tr>
-            <% end %>
             <% end %>
         </tbody>
       </table>
@@ -179,36 +177,6 @@
     </div>
     <div class="content table-responsive table-full-width">
       <table class="table table-hover table-striped">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Material</th>
-          </tr>
-        </thead>
-        <tbody>
-           <% current_parent.students.each do |student| %>
-            <tr>
-              <td>
-                <%= student.name %>
-              </td>
-              <td>
-                <%= student.lesson.name %>
-              </td>
-              <td>
-                <%= student.lesson.description %>
-              </td>
-              <td>
-                <%= student.lesson.grade.name %>
-              </td>
-              <td>
-                <%= link_to student.lesson, class: 'btn btn-info btn-sm' do %>
-                  <i class="fa fa-eye"></i>
-                  Show
-                <% end %>
-              </td>
-            </tr>
-            <% end %>
-        </tbody>
       </table>
     </div>
     <br/>
