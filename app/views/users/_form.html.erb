@@ -1,0 +1,15 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+       <%= f.input :phone %>
+      <%= f.input :gender, collection: Teacher::GENDER %>
+
+    </div>
+    </div>
+  </div>
+  <%= f.button :submit, class: 'btn btn-primary btn-fill' %>
+<% end %>
