@@ -1,0 +1,34 @@
+<%= simple_form_for(@student) do |f| %>
+  <%= f.error_notification %>
+  <% DateTime.now.strftime("%d/%m/%Y - %H:%M %p") %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div align="center" class="image-uploader">
+        <a href="#!">
+          <%= image_tag f.object.image, size: '150x150' %>
+          <%= f.input :image, as: :file, label: 'Upload Image' %>
+          <%= f.hidden_field :image_cache %>
+        </a>
+
+
+      </div>
+      <%= f.input :name %>
+      <%= f.input :parent_id %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :dob, as: :date, start_year: Date.today.year - 60,
+                             end_year: Date.today.year - 12, discard_day: false,
+                              order: [:day, :month, :year] %>
+      <%= f.input :phone %>
+      <%= f.input :gender, collection: Student::GENDER %>
+      <%= f.input :address %>
+      <%= f.input :course_id %>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <%= f.input :lat, as: :hidden, input_html: {id: 'teacher-lat'} %>
+      <%= f.input :long, as: :hidden, input_html: {id: 'teacher-long'} %>
+      <div id="map-teacher"></div>
+    </div>
+  </div>
+  <%= f.button :submit, class: 'btn btn-primary btn-fill' %>
+<% end %>
