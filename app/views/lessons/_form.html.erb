@@ -3,7 +3,7 @@
   <%= f.date_field :end_date %>
   <%= f.input :name %>
   <%= f.input :material %>
-  <%= f.input :course_id %>
+  <%= f.input :course_id, collection: Course.all %>
   <%= f.submit "Create lesson", class: "btn btn-talk" %>
 <% end %>
 

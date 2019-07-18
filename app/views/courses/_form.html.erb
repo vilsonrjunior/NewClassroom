@@ -8,7 +8,6 @@
       <%= f.input :description %>
       <%= f.input :grade_id, collection: Grade.all %>
       <%= f.association :teacher %>
-     <%=  f.collection_check_boxes :student_ids, Student.all, :id, :name %>
     </div>
   </div>
   <%= f.button :submit, class: 'btn btn-primary btn-fill' %>

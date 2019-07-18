@@ -6,16 +6,16 @@ class ApplicationController < ActionController::Base
   # before_action :authenticate_parent!
 
 
-  # layout :set_layout
+  layout :set_layout
 
-  # # def after_sign_in_path_for(resource)
-  # #   current_teacher_path
-  # # end
+  # def after_sign_in_path_for(resource)
+  #   current_teacher_path
+  # end
 
-  # private
+  private
 
-  #   def set_layout
-  #     devise_controller? ? 'devise' : 'application'
-  #   end
+    def set_layout
+      devise_controller? ? 'devise' : 'application'
+    end
 
 end
